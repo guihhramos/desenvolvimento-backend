@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.example.demo.repository;
 
 import java.io.File;
 
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.model.Obra;
+import com.example.demo.model.Obra;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ObraRepository {
     private static final int ZERO_BYTES = 0;
     private ObjectMapper objectMapper = new ObjectMapper();
-    private File arquivo = new File("src/main/resourcers/database/tb_obras.json");
+    private File arquivo = new File("src/main/resources/database/tb_obras.json");
 
 
     public List<Obra> getAll() throws IOException{
