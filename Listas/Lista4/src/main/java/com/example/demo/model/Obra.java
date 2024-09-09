@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.demo.model;
 
 import java.math.BigDecimal;
 
@@ -9,7 +9,7 @@ public class Obra {
     private String nome;
     private String autor;
     private BigDecimal preco;
-    
+
     @JsonProperty("ja_foi_vendida")
     private boolean jaFoiVendida;
 
