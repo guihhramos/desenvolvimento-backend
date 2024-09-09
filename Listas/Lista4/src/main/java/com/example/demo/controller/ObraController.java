@@ -16,7 +16,6 @@ import com.example.demo.service.ObraService;
 import java.io.IOException;
 import java.util.List;
 
-
 @RequestMapping("/obras")
 @RestController
 public class ObraController {
@@ -25,7 +24,7 @@ public class ObraController {
 
     @Autowired
     public ObraController(ObraService obraService) {
-        this.obraService = obraService; 
+        this.obraService = obraService;
     }
 
     @GetMapping

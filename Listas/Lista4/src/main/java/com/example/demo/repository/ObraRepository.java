@@ -18,14 +18,14 @@ public class ObraRepository {
     private ObjectMapper objectMapper = new ObjectMapper();
     private File arquivo = new File("src/main/resources/database/tb_obras.json");
 
-
-    public List<Obra> getAll() throws IOException{
+    public List<Obra> getAll() throws IOException {
         if (!arquivo.exists()) {
             arquivo.createNewFile();
         }
 
         if (arquivo.length() > ZERO_BYTES) {
-            return objectMapper.readValue(arquivo, new TypeReference<List<Obra>>(){});
+            return objectMapper.readValue(arquivo, new TypeReference<List<Obra>>() {
+            });
         }
         return new ArrayList<>();
     }
@@ -46,14 +46,14 @@ public class ObraRepository {
 
     public boolean update(Obra obra) throws IOException {
         List<Obra> obras = this.getAll();
-       for (Obra obraNoDatabase : obras) {
-        if (obra.getId() == obraNoDatabase.getId()) {
-            obraNoDatabase.setJaFoiVendida(obra.jaFoiVendida());
-            objectMapper.writeValue(arquivo, obras);
-            return true;
+        for (Obra obraNoDatabase : obras) {
+            if (obra.getId() == obraNoDatabase.getId()) {
+                obraNoDatabase.setJaFoiVendida(obra.jaFoiVendida());
+                objectMapper.writeValue(arquivo, obras);
+                return true;
+            }
         }
-       }
-       return false;
+        return false;
     }
 
 }
