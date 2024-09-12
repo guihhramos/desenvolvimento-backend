@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.model.Obra;
-import com.example.service.ObraService;
+import com.example.demo.model.Obra;
+import com.example.demo.service.ObraService;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,7 +25,7 @@ public class ObraController {
 
     @Autowired
     public ObraController(ObraService obraService) {
-        this.obraService = obraService; 
+        this.obraService = obraService;
     }
 
     @GetMapping
