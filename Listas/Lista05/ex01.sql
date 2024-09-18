@@ -8,7 +8,7 @@ create table tb_eventos(
     preco_ingresso decimal(6,2)
 );
 
-insert into tb_eventos values(1, 'Secullus Art', 'SP - Sao Paulo', 23.4);
-insert into tb_eventos values(2, 'Secullus Art e Buffet', 'Minas Gerais', 24.4);
+insert into tb_eventos values(1, 'Bienal', 'SP - Sao Paulo', 23.4);
+insert into tb_eventos values(2, 'Conferência Praise Internacional de Dança Cristã 2024', 'Bela Vista', 24.4);
 
 select * from tb_eventos;
