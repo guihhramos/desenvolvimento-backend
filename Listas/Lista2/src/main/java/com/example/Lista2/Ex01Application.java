@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/app")
 public class Ex01Application {
+	@SuppressWarnings("rawtypes")
 	private static List ilhas = new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(Ex01Application.class, args);
 	}
 
+	@SuppressWarnings("unchecked")
 	@PostMapping("/ilhas-de-calor")
 	public static String adicionarIlhaDeCalor(@RequestBody IlhaDeCalor ilha) {
 		ilhas.add(ilha);
@@ -28,6 +30,7 @@ public class Ex01Application {
 		return "Ilha de calor " + ilha.getBairro() + " adicionada com sucesso!";
 	}
 
+	@SuppressWarnings("rawtypes")
 	@GetMapping("/ilhas-de-calor")
 	public static List listarIlhasDeCalor() {
 		return ilhas;
